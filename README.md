@@ -33,12 +33,10 @@ This project implements a full end-to-end machine learning pipeline that scrapes
 ---
 
 ##  Data Pipeline
+- **Scrape Articles**
+- **Split Dataset (Train/Val/Test)**
 
-```mermaid
-graph LR
-A[Scrape Articles] --> B[Generate QA Pairs]
-B --> C[Split Dataset (Train/Val/Test)]
-```
+---
 
 ## 🔧 Training Setup
 
