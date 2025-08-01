@@ -1,4 +1,4 @@
-# 🧠 End-to-End ML: News Article Tagging System
+#  End-to-End ML: News Article Tagging System
 
 This project implements a full end-to-end machine learning pipeline that scrapes news articles, tags them using a Question-Answering (QA) format, trains a fine-tuned model using LoRA, tracks experiments via MLflow, evaluates the system, and finally serves the model using vLLM.
 
