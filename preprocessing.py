@@ -8,16 +8,29 @@ world = pd.read_csv('world.csv')
 economy = pd.read_csv('economy.csv')
 sport = pd.read_csv('sport.csv')
 
-concat = pd.concat([acc, art, world, economy, sport])
+acc['label'] = 'accident'
+art['label'] = 'art'
+world['label'] = 'world'
+economy['label'] = 'economy'
+sport['label'] = 'sport'
 
-train_val, test = train_test_split(concat, test_size=0.1, random_state=42)
-train, val = train_test_split(train_val, test_size=0.1, random_state=42)
+concat = pd.concat([acc, art, world, economy, sport], ignore_index=True)
 
+train_val, test = train_test_split(
+    concat, 
+    test_size=0.1, 
+    random_state=42, 
+    stratify=concat['label']
+)
 
+train, val = train_test_split(
+    train_val, 
+    test_size=0.1, 
+    random_state=42, 
+    stratify=train_val['label']
+)
 
 train.to_csv('train.csv', index=False)
 val.to_csv('val.csv', index=False)
 test.to_csv('test.csv', index=False)
-
-
 
